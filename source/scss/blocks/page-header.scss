@@ -130,7 +130,7 @@
 .page-header__nav {
   display: flex;
   align-items: center;
-
+  user-select: none;
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
     top: 0;
@@ -241,7 +241,7 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in, transform 0.1s linear;
 
     &::after {
       content: "";
@@ -275,6 +275,10 @@
         animation: showitemborder 0.4s ease-in;
         transition: background-color 0.2s ease-in;
       }
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
 
     &:hover,
