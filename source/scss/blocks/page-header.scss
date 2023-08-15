@@ -131,6 +131,7 @@
   display: flex;
   align-items: center;
   user-select: none;
+
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
     top: 0;
