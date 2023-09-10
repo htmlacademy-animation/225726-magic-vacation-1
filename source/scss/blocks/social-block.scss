@@ -161,6 +161,7 @@
 }
 
 .social-block__link {
+  -webkit-user-drag: none;
   position: relative;
   display: block;
   width: 4rem;
