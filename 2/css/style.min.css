@@ -4184,7 +4184,7 @@ img {
 }
 
 .screen__footer {
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0, 0, 0.16, 0.98);
   transform: translateY(200%);
 }
 
@@ -4213,7 +4213,7 @@ body.loaded .page-header__logo {
 }
 .page-header__nav {
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s cubic-bezier(0, 0, 0.16, 0.98);
 }
 
 body.loaded .page-header__nav {
