@@ -1,3 +1,26 @@
+// Show social button bg
+.social-block__toggler::before {
+  transform-origin: top left;
+  animation: socialButtonZoomIn 0.3s ease-out forwards;
+  transform: scale(0);
+  animation-delay: 0.3s;
+}
+
+@keyframes socialButtonZoomIn {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+  }
+
+  70% {
+    transform: scale(1.2) translate(-50%, -50%);
+  }
+
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+
 // Show social links step by step
 .social-block {
   &:hover {
