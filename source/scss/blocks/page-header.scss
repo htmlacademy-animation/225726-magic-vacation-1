@@ -131,6 +131,7 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  user-select: none;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -243,16 +244,18 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
+    transition: color 0.2s ease-in, transform 0.1s linear;
 
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
-      width: 100%;
+      width: 0;
       height: 2px;
       background-color: $c-light;
-      display: none;
-      left: 0;
+      display: block;
+      right: 0;
+      transition: width 0.2s ease-in, background-color 0.2s ease-in;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -269,8 +272,16 @@
 
     &.active {
       &::after {
-        display: block;
+        width: 100%;
+        left: 0;
+        right: auto;
+        animation: showitemborder 0.4s ease-in;
+        transition: background-color 0.2s ease-in;
       }
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
 
     &:hover,
@@ -281,6 +292,20 @@
       &::after {
         opacity: 1;
         background-color: $c-purple;
+        width: 100%;
+        left: 0;
+        right: auto;
+        animation: showitemborder 0.3s ease;
+      }
+    }
+
+    @keyframes showitemborder {
+      0% {
+        width: 0;
+      }
+
+      100% {
+        width: 100%;
       }
     }
   }
