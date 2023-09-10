@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: end;
 }
 
 .form__label {
@@ -35,6 +36,18 @@
   padding: 0 5.6rem;
   height: 6rem;
   width: calc(100% - 21rem);
+  animation: slidefull 0.3s ease-in forwards;
+
+  @keyframes slidefull {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: calc(100% - 21rem);
+    }
+  }
+
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -80,6 +93,7 @@
 
 .form__button {
   flex-grow: 1;
+  max-width: 180px;
 
   @media (orientation: portrait) {
     position: relative;

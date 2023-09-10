@@ -2,6 +2,36 @@
   "name": "magic-vacation",
   "version": "1.0.0",
   "description": "Личный проект «Таинственный отпуск» от HTML Academy",
+  "engines": {
+    "node": "=14.17.6"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
+    "stylelint:fix": "npm run stylelint -- --fix",
+    "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
+    "build": "webpack",
+    "webp": "gulp webp",
+    "sprite": "gulp sprite",
+    "start": "webpack-dev-server --open"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.{sass,scss}"
+  ],
+  "dependencies": {
+    "normalize.css": "8.0.1",
+    "swiper": "5.3.8",
+    "three": "0.115.0"
+  },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "copy-webpack-plugin": "5.1.1",
@@ -32,31 +62,5 @@
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.10.3",
     "write-file-webpack-plugin": "4.5.1"
-  },
-  "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
-    "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
-    "build": "webpack",
-    "webp": "gulp webp",
-    "sprite": "gulp sprite",
-    "start": "webpack-dev-server --open"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "Firefox ESR"
-  ],
-  "editorconfig-cli": [
-    "*.json",
-    "*.js",
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/img/**/*.svg",
-    "source/sass/**/*.{sass,scss}"
-  ],
-  "dependencies": {
-    "normalize.css": "8.0.1",
-    "swiper": "5.3.8",
-    "three": "0.115.0"
   }
 }
