@@ -1,0 +1,47 @@
+.page-header__menu a {
+  transition: color 0.2s ease-in, transform 0.1s linear;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    transition: transform 0.2s ease-in, background-color 0.2s ease-in;
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+
+  &.active {
+    &::after {
+      transform: scaleX(1);
+      animation: showMenuItemBorder 0.4s ease-in;
+      transition: background-color 0.2s ease-in;
+      transform-origin: left center;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $c-purple;
+    outline: none;
+
+    &::after {
+      background-color: $c-purple;
+      transform: scaleX(1);
+      animation: showMenuItemBorder 0.3s ease;
+      transform-origin: left center;
+    }
+  }
+}
+
+@keyframes showMenuItemBorder {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}

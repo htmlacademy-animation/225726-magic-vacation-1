@@ -1,0 +1,46 @@
+// Show social links step by step
+.social-block {
+  &:hover {
+    .social-block__list {
+      opacity: 1;
+      pointer-events: auto;
+
+      li {
+        opacity: 0;
+        animation: showSocialLink 0.2s ease-in forwards;
+
+        &:nth-child(2) {
+          animation-delay: 0.15s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes showSocialLink {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// smooth hide all social links
+.social-block__list {
+  transition: opacity 0.2s ease-out;
+}
+
+
+// smooth change color on hover
+.social-block__link {
+  transition: color 0.3s ease-in-out;
+}
