@@ -22,7 +22,7 @@ $show-prizes-base-speed: 0.3s;
     height: 100%;
     background: $c-dark;
     z-index: 1;
-    transform: scaleY(0);
+    transform: scale3d(1, 0, 0);
     transition: transform $show-prizes-base-speed ease-in;
     transform-origin: bottom;
   }
@@ -39,7 +39,7 @@ $show-prizes-base-speed: 0.3s;
 
 .screen--prizes.active {
   &::after {
-    transform: scaleY(100%);
+    transform: scale3d(1, 1, 1);
   }
 
   .screen__wrapper {
