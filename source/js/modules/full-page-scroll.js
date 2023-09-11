@@ -52,7 +52,10 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
+    this.screenElements.forEach((screen, screenNum) => {
+      if (screenNum === this.activeScreen) {
+        return;
+      }
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });

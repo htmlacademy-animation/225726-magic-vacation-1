@@ -1,8 +1,8 @@
 .screen__footer {
-  transition: transform 0.4s cubic-bezier(0, 0, 0.16, 0.98);
+  transition: transform 0.4s $first-screen-timing;
   transform: translateY(200%);
 }
 
-body.loaded .screen__footer {
+body.loaded .screen.active .screen__footer {
   transform: translateY(0);
 }

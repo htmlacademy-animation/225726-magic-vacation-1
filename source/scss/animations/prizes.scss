@@ -1,0 +1,59 @@
+// show history screen, for overlay effect
+.screen.screen--story.screen--hidden {
+  display: block;
+}
+
+$show-prizes-base-speed: 0.3s;
+
+.screen--prizes {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: transparent;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $c-dark;
+    z-index: 1;
+    transform: scale3d(1, 0, 0);
+    transition: transform $show-prizes-base-speed ease-in;
+    transform-origin: bottom;
+  }
+
+  .screen__wrapper {
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .screen__footer {
+    z-index: 2;
+  }
+}
+
+.screen--prizes.active {
+  &::after {
+    transform: scale3d(1, 1, 1);
+  }
+
+  .screen__wrapper {
+    animation: prizesContentFadeIn $show-prizes-base-speed cubic-bezier(0.3, 0.74, 1, 1) forwards;
+    animation-delay: $show-prizes-base-speed*0.7;
+  }
+}
+
+@keyframes prizesContentFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
