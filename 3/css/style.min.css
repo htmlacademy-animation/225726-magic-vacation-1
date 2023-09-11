@@ -4390,7 +4390,7 @@ body.loaded .page-header__nav {
   height: 100%;
   background: #5f458c;
   z-index: 1;
-  transform: scaleY(0);
+  transform: scale3d(1, 0, 0);
   transition: transform 0.3s ease-in;
   transform-origin: bottom;
 }
@@ -4403,7 +4403,7 @@ body.loaded .page-header__nav {
 }
 
 .screen--prizes.active::after {
-  transform: scaleY(100%);
+  transform: scale3d(1, 1, 1);
 }
 .screen--prizes.active .screen__wrapper {
   animation: prizesContentFadeIn 0.3s cubic-bezier(0.3, 0.74, 1, 1) forwards;
