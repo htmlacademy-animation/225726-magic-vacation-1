@@ -5,7 +5,7 @@
 
 body.loaded .page-header__logo {
   opacity: 1;
-  animation: showLogo 0.3s cubic-bezier(0, 0, 0.16, 0.98) forwards;
+  animation: showLogo 0.3s $first-screen-timing forwards;
 }
 
 @keyframes showLogo {
@@ -23,7 +23,7 @@ body.loaded .page-header__logo {
 // Show main menu fade in
 .page-header__nav {
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0, 0, 0.16, 0.98);
+  transition: opacity 0.5s $first-screen-timing;
 }
 
 body.loaded .page-header__nav {
