@@ -1,0 +1,24 @@
+.form__field {
+  animation: gameFormInputStretchIn 0.3s ease-in forwards;
+  transform-origin: right center;
+}
+
+@keyframes gameFormInputStretchIn {
+  0% {
+    max-width: 0;
+  }
+
+  100% {
+    max-width: 100%;
+  }
+}
+
+.form {
+  justify-content: end;
+}
+
+.form__button {
+  @media (min-width: $tablet) and (orientation: landscape) {
+    max-width: 18rem;
+  }
+}
